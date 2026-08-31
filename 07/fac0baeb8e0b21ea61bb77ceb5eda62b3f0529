@@ -1,0 +1,22 @@
+README.md
+  s_0a1fdf7e8a0a56::t_c9dc6363954902 5-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.32",
+  "base_commit_sha": "07fac0baeb8e0b21ea61bb77ceb5eda62b3f0529",
+  "prompts": {},
+  "sessions": {
+    "s_0a1fdf7e8a0a56": {
+      "agent_id": {
+        "tool": "grok",
+        "id": "01a0569f-4634-76a2-a497-1e9417fb5396",
+        "model": "grok-4.6"
+      },
+      "human_author": "jj-flow lab seed <lab-seed@jj-flow.invalid>",
+      "custom_attributes": {
+        "internal_commit_event_allowlist": "codeup.aliyun.com,codeup-*,rd-*"
+      }
+    }
+  }
+}
