@@ -1,0 +1,92 @@
+scenarios/L2-S2.md
+  s_0a1fdf7e8a0a56::t_4c31670816c9f2 1-3
+seed/notes-beta/tests/useNotes.test.mjs
+  s_0a1fdf7e8a0a56::t_7f059ba978d5bc 1-11
+seed/notes-beta/src/composables/useNotes.js
+  s_0a1fdf7e8a0a56::t_5da24981d736b2 1-19
+scripts/lib/lab-util.mjs
+  s_0a1fdf7e8a0a56::t_4a7518edd1b56f 1-183
+seed/notes-alpha/src/store/notes.js
+  s_0a1fdf7e8a0a56::t_181549884e6e6e 1-23
+seed/shared-origin/src/model/note.js
+  s_0a1fdf7e8a0a56::t_8306801c3620fd 1-3
+scripts/oracles/create-base.mjs
+  s_0a1fdf7e8a0a56::t_f155ec26cdb0ae 1-47
+scripts/oracles/version-pin.mjs
+  s_0a1fdf7e8a0a56::t_89b55fb22c116d 1-16
+scripts/oracles/role-literals.mjs
+  s_0a1fdf7e8a0a56::t_02163eeae561f7 1-38
+scripts/oracles/dispatch-attest.mjs
+  s_0a1fdf7e8a0a56::t_1951a3d3c0b7ea 326-328
+  s_0a1fdf7e8a0a56::t_18d8792bd4a37b 71-76
+  s_0a1fdf7e8a0a56::t_aa01cce25745d0 91-122
+  s_0a1fdf7e8a0a56::t_424b4d1698c69c 277-310
+  s_0a1fdf7e8a0a56::t_0238ac426abc61 65-70
+  s_0a1fdf7e8a0a56::t_1e1d8eba83eff9 241
+  s_0a1fdf7e8a0a56::t_2e816522b1f80a 1-64,77-89,123-141,164-240,242-276,311-325,329-346
+  s_0a1fdf7e8a0a56::t_6bcfab3961112b 90,142-163
+README.md
+  s_0a1fdf7e8a0a56::t_12d7a8d4976eb9 3,5,9-11,13-19
+scenarios/L2-S1.md
+  s_0a1fdf7e8a0a56::t_3a3d4b72ccb271 1-5
+scripts/oracles/copy-adapt.mjs
+  s_0a1fdf7e8a0a56::t_116ab155c6d7c5 1-56
+naming.json.template
+  s_0a1fdf7e8a0a56::t_7392a5e82c6004 1-7
+seed/shared-origin/README.md
+  s_0a1fdf7e8a0a56::t_66ecb3c29dcdbd 1-3
+seed/notes-alpha/src/api/httpClient.js
+  s_0a1fdf7e8a0a56::t_8ad56a9b934801 1-13
+scripts/oracles/unauthorized-target.mjs
+  s_0a1fdf7e8a0a56::t_91c23b3b0ea6d0 1-16
+seed/notes-beta/src/screens/NoteList.js
+  s_0a1fdf7e8a0a56::t_ceedae01a01614 1-3
+seed/notes-alpha/src/views/detail.js
+  s_0a1fdf7e8a0a56::t_fa509b5d62da7d 1-3
+seed/notes-alpha/tests/store.test.mjs
+  s_0a1fdf7e8a0a56::t_d3286eb4bff0ab 1-11
+seed/notes-beta/src/client/fetchClient.js
+  s_0a1fdf7e8a0a56::t_b1ba20c897ccd2 1-11
+control-template/README.md
+  s_0a1fdf7e8a0a56::t_ed39b1297e9c79 1-2
+map.md
+  s_0a1fdf7e8a0a56::t_adc2b9b94362a2 1-6
+seed/notes-alpha/src/views/list.js
+  s_0a1fdf7e8a0a56::t_52ba76399477b2 1-3
+scripts/oracles/handoff-ready.mjs
+  s_0a1fdf7e8a0a56::t_4bdbf1eae22f0b 1-21
+seed/notes-beta/src/screens/NoteDetail.js
+  s_0a1fdf7e8a0a56::t_9ab6648795fb29 1-3
+seed/shared-origin/package.json
+  s_0a1fdf7e8a0a56::t_7ce1dd56eb4798 1-8
+scripts/seed-family-gym.mjs
+  s_0a1fdf7e8a0a56::t_5cce80d2cc75d9 33
+  s_0a1fdf7e8a0a56::t_69959609367ecc 37-38,47-48,67-68
+  s_0a1fdf7e8a0a56::t_37975667e2bccd 1-32,34-36,39-46,49-66,69-119
+scripts/lab.mjs
+  s_0a1fdf7e8a0a56::t_3f665bee4e250a 111
+  s_0a1fdf7e8a0a56::t_6b4983f75ead6e 1-10,12-110,112-156,159-211
+  s_0a1fdf7e8a0a56::t_3cd3dfc9e96bb1 11
+  s_0a1fdf7e8a0a56::t_40c57adbbc4680 157-158
+lab-manifest.json
+  s_0a1fdf7e8a0a56::t_247809c935acf8 5-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.32",
+  "base_commit_sha": "609d81b36f51a9d98d1cdc388dc0b36048425490",
+  "prompts": {},
+  "sessions": {
+    "s_0a1fdf7e8a0a56": {
+      "agent_id": {
+        "tool": "grok",
+        "id": "01a0569f-4634-76a2-a497-1e9417fb5396",
+        "model": "grok-4.6"
+      },
+      "human_author": "jj-flow lab seed <lab-seed@jj-flow.invalid>",
+      "custom_attributes": {
+        "internal_commit_event_allowlist": "codeup.aliyun.com,codeup-*,rd-*"
+      }
+    }
+  }
+}
