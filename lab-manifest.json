@@ -2,6 +2,15 @@
   "id": "family-gym",
   "display_name": "Family gym",
   "harness_version": "0.1.3",
-  "jj_flow_commit": "cd891c051b765ebc243660dcab5408adf0d4554d",
-  "scenarios": []
+  "jj_flow_commit": "8e51498091ae51f611e63d1cd06330c62a23b921",
+  "scenarios": [
+    { "id": "L2-S1", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "dev", "oracle_kind": "mechanical", "title": "handoff FULL + ADAPT shape" },
+    { "id": "L2-S2", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "dev", "oracle_kind": "mechanical", "title": "reject copy" },
+    { "id": "L2-S3a", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "handoff ready=false" },
+    { "id": "L2-S3b", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "unauthorized target" },
+    { "id": "L2-S4a", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "master", "oracle_kind": "mechanical", "title": "CREATE stale master" },
+    { "id": "L2-S4b", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "feat/beta-0731-dev", "oracle_kind": "mechanical", "title": "CREATE purpose mismatch" },
+    { "id": "L2-S5", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "VERIFIED attestation vs oral" },
+    { "id": "L2-S6", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "partial fail + RECONCILE" }
+  ]
 }

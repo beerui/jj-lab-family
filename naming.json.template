@@ -1,0 +1,7 @@
+{
+  "schema_version": "jj-flow/naming/1.0",
+  "dispatch": {
+    "control_root": "REPLACE_CONTROL_ROOT",
+    "portfolio_root": "REPLACE_PORTFOLIO_ROOT"
+  }
+}
