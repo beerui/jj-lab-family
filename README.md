@@ -2,6 +2,9 @@
 
 jj-flow **实验场 Lab 2**：一个实验项目，包装 `notes-alpha`（Vuex 形）/ `notes-beta`（Pinia 形）加非 git control。
 
+GitHub：https://github.com/beerui/jj-lab-family  
+产品 pointer：https://github.com/beerui/jj-flow
+
 不要命名为 项目B / 项目C / `handoff`。
 
 ```powershell
