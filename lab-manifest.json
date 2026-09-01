@@ -10,7 +10,7 @@
     { "id": "L2-S3b", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "unauthorized target" },
     { "id": "L2-S4a", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "master", "oracle_kind": "mechanical", "title": "CREATE stale master" },
     { "id": "L2-S4b", "cwd": "_materialized/family-gym/notes-beta", "start_branch": "feat/beta-0731-dev", "oracle_kind": "mechanical", "title": "CREATE purpose mismatch" },
-    { "id": "L2-S5", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "VERIFIED attestation vs oral" },
+    { "id": "L2-S5", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "VERIFIED lab-harness attestation vs oral" },
     { "id": "L2-S6", "cwd": "_materialized/family-gym/notes-alpha", "start_branch": "dev", "oracle_kind": "mechanical", "title": "partial fail + RECONCILE" }
   ]
 }

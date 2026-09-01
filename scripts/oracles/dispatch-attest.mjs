@@ -77,7 +77,10 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     return { ok: false, findings };
   }
 
-  const written = attMod.writeGrokAttestation(ctl, {
+  const writeAttestation = typeof attMod.writeLabAttestation === 'function'
+    ? attMod.writeLabAttestation
+    : attMod.writeGrokAttestation;
+  const written = writeAttestation(ctl, {
     deliveryId: 'DEL-LAB-FULL',
     task_key: devIntent.task_key,
     session_id: SESSION,
@@ -90,7 +93,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
   let reviewAtt = null;
 
   if (leadIntent) {
-    const leadAtt = attMod.writeGrokAttestation(ctl, {
+    const leadAtt = writeAttestation(ctl, {
       deliveryId: 'DEL-LAB-FULL',
       task_key: leadIntent.task_key,
       session_id: SESSION,
@@ -104,7 +107,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
       taskKey: leadIntent.task_key,
       threadId: SESSION,
       projectId: 'notes-alpha',
-      hostId: 'grok-build',
+      hostId: 'lab-harness',
       handleKind: 'session',
       agentName: 'jj-workflow-developer',
       sandboxMode: 'workspace-write',
@@ -125,7 +128,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     taskKey: devIntent.task_key,
     threadId: SESSION,
     projectId: 'notes-beta',
-    hostId: 'grok-build',
+    hostId: 'lab-harness',
     handleKind: 'session',
     agentName: 'jj-workflow-developer',
     sandboxMode: 'workspace-write',
@@ -151,7 +154,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     findings.push(finding('L2-S5', 'review intent missing after development COMPLETED', 'Second DISPATCH should create the review task.'));
     return { ok: false, findings };
   }
-  reviewAtt = attMod.writeGrokAttestation(ctl, {
+  reviewAtt = writeAttestation(ctl, {
     deliveryId: 'DEL-LAB-FULL',
     task_key: reviewIntent.task_key,
     session_id: SESSION,
@@ -166,7 +169,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     taskKey: reviewIntent.task_key,
     threadId: SESSION,
     projectId: 'notes-beta',
-    hostId: 'grok-build',
+    hostId: 'lab-harness',
     handleKind: 'session',
     agentName: 'jj-workflow-reviewer',
     sandboxMode: 'read-only',
@@ -196,8 +199,8 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     findings.push(finding('L2-S5', `full delivery status ${delivery.status}`, 'Attestation file + produced_commit + review PASS + result.md must yield VERIFIED.'));
   }
   const bound = delivery.dispatch_intents.find((item) => item.task_key === devIntent.task_key);
-  if (bound.host_id !== 'grok-build' || bound.handle_kind !== 'session') {
-    findings.push(finding('L2-S5', `host ${bound.host_id}/${bound.handle_kind}`, 'Lock Mode S grok-build session.'));
+  if (bound.host_id !== 'lab-harness' || bound.handle_kind !== 'session') {
+    findings.push(finding('L2-S5', `host ${bound.host_id}/${bound.handle_kind}`, 'Lock Mode S lab-harness session (gym, not Wave 2).'));
   }
   if (String(bound.sandbox_evidence_ref).startsWith('host:')) {
     findings.push(finding('L2-S5', 'attestation is host: string', 'Use attestations/*.json file.'));
@@ -239,7 +242,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
   let failed = approveDispatch(failPlane, { deliveryId: 'DEL-LAB-FAIL', decisionRef: 'lab:fail' });
   failed = dispatchTasks(failed, 'DEL-LAB-FAIL', { capabilities: [...REQUIRED_APP_CAPABILITIES] }).plane;
   const failDev = failed.deliveries[0].dispatch_intents.find((item) => item.project_id === 'notes-beta' && item.responsibility === 'development');
-  const failAtt = attMod.writeGrokAttestation(ctl, {
+  const failAtt = writeAttestation(ctl, {
     deliveryId: 'DEL-LAB-FAIL',
     task_key: failDev.task_key,
     session_id: SESSION,
@@ -249,7 +252,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
     taskKey: failDev.task_key,
     threadId: SESSION,
     projectId: 'notes-beta',
-    hostId: 'grok-build',
+    hostId: 'lab-harness',
     handleKind: 'session',
     agentName: 'jj-workflow-developer',
     sandboxMode: 'workspace-write',
@@ -284,7 +287,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
   const reconDev = recon.deliveries[0].dispatch_intents.find((item) => item.project_id === 'notes-beta' && item.responsibility === 'development');
   const keysBefore = recon.deliveries[0].dispatch_intents.map((item) => item.task_key).sort();
   recon = markDispatchUnknown(recon, { taskKey: reconDev.task_key });
-  const recAtt = attMod.writeGrokAttestation(ctl, {
+  const recAtt = writeAttestation(ctl, {
     deliveryId: 'DEL-LAB-RECON',
     task_key: reconDev.task_key,
     session_id: SESSION,
@@ -296,7 +299,7 @@ export async function runDispatchOracles({ root, flow = jjFlowRoot() }) {
       task_key: reconDev.task_key,
       thread_id: SESSION,
       project_id: 'notes-beta',
-      host_id: 'grok-build',
+      host_id: 'lab-harness',
       handle_kind: 'session',
       agent_name: 'jj-workflow-developer',
       sandbox_mode: 'workspace-write',
