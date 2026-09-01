@@ -1,0 +1,25 @@
+scripts/oracles/dispatch-attest.mjs
+  s_0a1fdf7e8a0a56::t_9d032d1526c421 80-83,96,110,131,157
+  s_0a1fdf7e8a0a56::t_b20e13e2268025 172,202-203,245,255,290,302
+lab-manifest.json
+  s_0a1fdf7e8a0a56::t_ee8a128f3f79fd 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.32",
+  "base_commit_sha": "9c2eb5b0b191382ef8980a92b6761f87dd511117",
+  "prompts": {},
+  "sessions": {
+    "s_0a1fdf7e8a0a56": {
+      "agent_id": {
+        "tool": "grok",
+        "id": "01a0569f-4634-76a2-a497-1e9417fb5396",
+        "model": "grok-4.6"
+      },
+      "human_author": "jj-flow lab seed <lab-seed@jj-flow.invalid>",
+      "custom_attributes": {
+        "internal_commit_event_allowlist": "codeup.aliyun.com,codeup-*,rd-*"
+      }
+    }
+  }
+}
