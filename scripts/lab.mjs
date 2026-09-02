@@ -123,7 +123,9 @@ async function runMechanical(root) {
   const ralph = await import(pathToFileURL(path.join(flow, 'src', 'ralph.mjs')).href);
   git(alpha, ['checkout', 'dev']);
   applyFamilyEnv(root);
-  const dirtyId = 'RALPH-alphahand-20260831';
+  const dirtyId = typeof ralph.buildRalphRunId === 'function'
+    ? ralph.buildRalphRunId('alphahand', '20260831')
+    : 'task-alphahand';
   ralph.initRun({
     run_id: dirtyId,
     title: 'handoff dirty',
@@ -141,7 +143,9 @@ async function runMechanical(root) {
   findings.push(...checkHandoffReady(dirtyPkg.handoff, { expectReady: false }).findings);
   git(alpha, ['checkout', '--', 'README.md']);
 
-  const cleanId = 'RALPH-alphafull-20260831';
+  const cleanId = typeof ralph.buildRalphRunId === 'function'
+    ? ralph.buildRalphRunId('alphafull', '20260831')
+    : 'task-alphafull';
   ralph.initRun({
     run_id: cleanId,
     title: 'handoff full',
